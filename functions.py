@@ -1,4 +1,3 @@
-import json
 from settings import DB_PASS
 import psycopg2
 from psycopg2 import Error
@@ -165,7 +164,6 @@ def get_user_price():
 
         print("Вывод каждой строки и ее столбцов")
         for row in shop:
-            # if row[8] == user_input:
             print("-" * 100)
             print("Id: ", row[0], )
             print("Товар: ", row[1])
