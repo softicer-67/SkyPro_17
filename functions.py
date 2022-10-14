@@ -4,11 +4,6 @@ import psycopg2
 from psycopg2 import Error
 
 
-def user_option():
-    option = input()
-    return option
-
-
 def get_ads():
     try:
         # Подключиться к существующей базе данных
