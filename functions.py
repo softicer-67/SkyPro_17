@@ -27,6 +27,7 @@ def get_ads():
 
         print("Вывод каждой строки и ее столбцов")
         for row in shop:
+            print("-" * 100)
             print("Id: ", row[0], )
             print("Товар: ", row[1])
             print("Описание: ", row[4])
