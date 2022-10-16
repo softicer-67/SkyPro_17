@@ -39,12 +39,12 @@ def get_sort(cursor):
     shop = cursor.fetchall()
 
     for row in shop:
-        if min_input <= row[3] <= max_input:
-            print("-" * 100)
-            print("Id: ", row[0])
-            print("Товар: ", row[1])
-            print("Описание: ", row[4])
-            print("Цена: ", row[3], '\n')
+        # if min_input <= row[3] <= max_input:
+        print("-" * 100)
+        print("Id: ", row[0])
+        print("Товар: ", row[1])
+        print("Описание: ", row[4])
+        print("Цена: ", row[3], '\n')
 
 
 def get_city(cursor):
