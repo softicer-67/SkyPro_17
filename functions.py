@@ -33,7 +33,7 @@ def get_sort(cursor):
     min_input = int(input("От: "))
     max_input = int(input("До: "))
 
-    postgreSQL = f"select * from new where c4 >= {min_input} and c4 <= {max_input} order by c4"
+    postgreSQL = f"select * from new where c4 between {min_input} and {max_input} order by c4"
 
     cursor.execute(postgreSQL)
     shop = cursor.fetchall()
