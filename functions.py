@@ -5,7 +5,6 @@ def get_ads(cursor):
     cursor.execute(postgreSQL)
     shop = cursor.fetchall()
 
-    print("Вывод каждой строки и ее столбцов")
     for row in shop:
         print("-" * 100)
         print("Id: ", row[0], )
@@ -21,7 +20,6 @@ def get_user_ads(cursor):
     cursor.execute(postgreSQL)
     shop = cursor.fetchall()
 
-    print("Вывод каждой строки и ее столбцов")
     for row in shop:
         print("-" * 100)
         print("Id: ", row[0], )
@@ -40,7 +38,6 @@ def get_sort(cursor):
     cursor.execute(postgreSQL)
     shop = cursor.fetchall()
 
-    print("Вывод каждой строки и ее столбцов")
     for row in shop:
         if min_input <= row[3] <= max_input:
             print("-" * 100)
@@ -58,7 +55,6 @@ def get_city(cursor):
     cursor.execute(postgreSQL)
     shop = cursor.fetchall()
 
-    print("Вывод каждой строки и ее столбцов")
     for row in shop:
         print("-" * 100)
         print("Id: ", row[0], )
@@ -80,7 +76,6 @@ def get_user_price(cursor):
     cursor.execute(postgreSQL)
     shop = cursor.fetchall()
 
-    print("Вывод каждой строки и ее столбцов")
     for row in shop:
         print("-" * 100)
         print("Id: ", row[0], )
