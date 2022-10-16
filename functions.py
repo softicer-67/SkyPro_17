@@ -39,7 +39,6 @@ def get_sort(cursor):
     shop = cursor.fetchall()
 
     for row in shop:
-        # if min_input <= row[3] <= max_input:
         print("-" * 100)
         print("Id: ", row[0])
         print("Товар: ", row[1])
