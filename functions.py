@@ -7,7 +7,7 @@ def get_ads(cursor):
 
     for row in shop:
         print("-" * 100)
-        print("Id: ", row[0], )
+        print("Id: ", row[0])
         print("Товар: ", row[1])
         print("Описание: ", row[4])
         print("Цена: ", row[3], '\n')
@@ -22,7 +22,7 @@ def get_user_ads(cursor):
 
     for row in shop:
         print("-" * 100)
-        print("Id: ", row[0], )
+        print("Id: ", row[0])
         print("Товар: ", row[1])
         print("Автор: ", row[8])
         print("Цена: ", row[3], '\n')
@@ -56,28 +56,28 @@ def get_city(cursor):
 
     for row in shop:
         print("-" * 100)
-        print("Id: ", row[0], )
+        print("Id: ", row[0])
         print("Товар: ", row[1])
         print("Автор: ", row[8])
         print("Цена: ", row[3], '\n')
 
 
 def get_user_price(cursor):
-    print('\n[1] - Поиск по имени\n[2] - Поиск по цене\n')
-    option = input("Выбрать: ")
-    if option == '1':
-        user_input = input('Введи имя: ')
-        postgreSQL = f"SELECT * FROM new JOIN author on author.c1 = new.c3 where author.c2 = '{user_input}'"
-    elif option == '2':
-        user_input = input('Цена от: ')
-        postgreSQL = f"SELECT * FROM new JOIN author on author.c1 = new.c3 where c4 > {user_input} order by c4"
+    user_name = input('Введи имя: ')
+
+    postgreSQL = f"""
+            SELECT author.c2, sum(c4)
+            FROM new 
+            JOIN author 
+            on author.c1 = new.c3
+            where author.c2 = '{user_name}'
+            group by author.c2
+    """
 
     cursor.execute(postgreSQL)
     shop = cursor.fetchall()
 
     for row in shop:
         print("-" * 100)
-        print("Id: ", row[0], )
-        print("Товар: ", row[1])
-        print("Автор: ", row[8])
-        print("Цена: ", row[3], '\n')
+        print("Автор: ", row[0])
+        print("Товаров на сумму: ", row[1], '\n')
